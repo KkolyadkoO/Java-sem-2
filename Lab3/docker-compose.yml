@@ -1,0 +1,17 @@
+services:
+  lab3-db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=World
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - lab3_postgres_data:/var/lib/postgresql/data
+    command: [ "postgres", "-c", "listen_addresses=*", "-c", "password_encryption=scram-sha-256" ]
+
+volumes:
+  lab3_postgres_data:
