@@ -8,7 +8,6 @@ public class SortService {
             return new int[0];
         }
 
-        // Разбиваем строку по запятым
         String[] parts = input.split(",");
         int[] numbers = new int[parts.length];
 

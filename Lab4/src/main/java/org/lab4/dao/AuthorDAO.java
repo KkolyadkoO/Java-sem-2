@@ -74,7 +74,6 @@ public class AuthorDAO implements AbstractDAO<Author> {
         }
     }
 
-    // Доп. метод: авторы с более чем N книг
     public List<Author> getAuthorsWithMoreThanNBooks(int n) throws SQLException {
         String sql = """
                 SELECT a.id, a.full_name, a.birth_date

@@ -22,7 +22,6 @@ public class SortServlet extends HttpServlet {
         String numbersInput = request.getParameter("numbers");
         int[] sorted = sortService.sortNumbers(numbersInput);
 
-        // Передаём в JSP
         request.setAttribute("input", numbersInput);
         request.setAttribute("sorted", Arrays.toString(sorted));
 

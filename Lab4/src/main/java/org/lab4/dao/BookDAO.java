@@ -83,7 +83,6 @@ public class BookDAO implements AbstractDAO<Book> {
         }
     }
 
-    // Найти книги, изданные за последние 5 лет
     public List<Book> getBooksLast5Years() throws SQLException {
         int currentYear = java.time.Year.now().getValue();
         String sql = "SELECT * FROM books WHERE publish_year >= ?";
@@ -104,7 +103,6 @@ public class BookDAO implements AbstractDAO<Book> {
         }
     }
 
-    // Книги заданного автора
     public List<Book> getBooksByAuthor(int authorId) throws SQLException {
         String sql = "SELECT * FROM books WHERE author_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -124,7 +122,6 @@ public class BookDAO implements AbstractDAO<Book> {
         }
     }
 
-    // Удалить книги ранее заданного года
     public void deleteBooksBeforeYear(int year) throws SQLException {
         try (PreparedStatement stmt = connection.prepareStatement("DELETE FROM books WHERE publish_year < ?")) {
             stmt.setInt(1, year);
