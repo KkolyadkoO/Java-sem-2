@@ -75,10 +75,6 @@ public class PublisherDAO implements AbstractDAO<Publisher> {
         }
     }
 
-    /**
-     * Дополнительный запрос:
-     * Найти издательства, выпустившие книги более чем N авторов.
-     */
     public List<Publisher> getPublishersWithMoreThanNAuthors(int n) throws SQLException {
         String sql = """
             SELECT p.id, p.name, p.country
