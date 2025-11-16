@@ -48,7 +48,11 @@ public class StudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try (BufferedReader reader = req.getReader()) {
             JSONObject json = new JSONObject(reader.lines().reduce("", String::concat));
-            StudentEntity s = new StudentEntity(json.getString("name"), json.getString("group"), json.getDouble("avgGrade"));
+            StudentEntity s = new StudentEntity(
+                    json.getString("name"),
+                    json.getString("group"),
+                    json.getDouble("avgGrade")
+            );
             repo.create(s);
             resp.setStatus(HttpServletResponse.SC_CREATED);
         } catch (Exception e) {
