@@ -1,5 +1,5 @@
 services:
-  lab3-db:
+  java-labs-db:
     image: postgres:16-alpine
     environment:
       - POSTGRES_USER=postgres
@@ -10,8 +10,8 @@ services:
       - "5433:5432"
 
     volumes:
-      - lab3_postgres_data:/var/lib/postgresql/data
+      - java_labs_postgres_data:/var/lib/postgresql/data
     command: [ "postgres", "-c", "listen_addresses=*", "-c", "password_encryption=scram-sha-256" ]
 
 volumes:
-  lab3_postgres_data:
+  java_labs_postgres_data:

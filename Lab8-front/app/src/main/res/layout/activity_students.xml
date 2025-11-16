@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/sessionInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Session info"
+        android:padding="4dp" />
+
+    <Button
+        android:id="@+id/btnAddStudent"
+        android:text="Добавить студента"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <ListView
+        android:id="@+id/listStudents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
