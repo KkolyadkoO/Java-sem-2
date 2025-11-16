@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат сортировки</title>
+</head>
+<body>
+<h2>Результат выполнения задачи</h2>
+
+<p><strong>Введённые данные:</strong> <span th:text="${input}">числа</span></p>
+<p><strong>Отсортированный массив:</strong> <span th:text="${result}">результат</span></p>
+
+<form th:action="@{/back}" method="get">
+    <button type="submit">Вернуться на главную</button>
+</form>
+
+</body>
+</html>

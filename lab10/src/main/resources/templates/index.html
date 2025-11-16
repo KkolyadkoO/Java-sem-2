@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Сортировка чисел</title>
+</head>
+<body>
+<h2>Введите массив чисел через запятую:</h2>
+
+<form action="#" th:action="@{/sort}" method="post">
+    <input type="text" name="numbers" placeholder="Например: 5,3,8,1" required>
+    <button type="submit">Отсортировать</button>
+</form>
+
+</body>
+</html>
